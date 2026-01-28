@@ -38,7 +38,7 @@ struct MainProfileView: View
                 VStack {
                     Circle()
                         .frame(width: 150)
-                    Text("John Smeet")
+                    Text(self.viewModel.profileInformation.name)
                         .bold()
                         .font(.system(size: 25))
                     HStack {
@@ -52,13 +52,14 @@ struct MainProfileView: View
                     .padding(.top)
                     .padding(.horizontal)
                 }
-                .padding(.top, 65 + safeArea.top)
             }.background {
                 ScrollDetector { offset in
                     offsetY = -offset
                 } onDraggingEnd: { _, _ in
                 }
             }
+        }.onAppear {
+            self.viewModel.handle(.onAppear)
         }
     }
 }

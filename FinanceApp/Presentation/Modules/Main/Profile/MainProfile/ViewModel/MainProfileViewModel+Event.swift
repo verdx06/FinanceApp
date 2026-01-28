@@ -11,6 +11,7 @@ extension MainProfileViewModel
 {
     enum Event
     {
+        case onAppear
         case editButtonTapped
         case settingsButtonTapped
         case logoutButtonTapped
