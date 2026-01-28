@@ -44,7 +44,14 @@ extension UseCaseFactory
 
 extension UseCaseFactory
 {
-    func makeTransactionsUseCase() -> TransactionsUseCase {
+    func makeTransactionsUseCase() -> TransactionsUseCaseProtocol {
         TransactionsUseCase(repository: self.repositoryFactory.transactionsRepository)
+    }
+}
+
+extension UseCaseFactory
+{
+    func makeMainProfileUseCase() -> MainProfileUseCaseProtocol {
+        MainProfileUseCase()
     }
 }

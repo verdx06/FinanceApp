@@ -55,6 +55,7 @@
 		89681BA92F286F9100C206D5 /* CategoriesType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89681BA82F286F9100C206D5 /* CategoriesType.swift */; };
 		89681BAD2F29E22A00C206D5 /* TransactionModel+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89681BAC2F29E22A00C206D5 /* TransactionModel+Formatting.swift */; };
 		89681BB02F29E6EE00C206D5 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89681BAF2F29E6EA00C206D5 /* Double.swift */; };
+		89681BB62F2A077500C206D5 /* MainProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89681BB52F2A077500C206D5 /* MainProfileUseCase.swift */; };
 		899F4F262F0840C60089F27E /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899F4F252F0840C60089F27E /* View.swift */; };
 		899F4F282F0842D30089F27E /* ScrollDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899F4F272F0842D30089F27E /* ScrollDetector.swift */; };
 		899F4F342F090CC50089F27E /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899F4F332F090CC50089F27E /* Routable.swift */; };
@@ -176,6 +177,7 @@
 		89681BA82F286F9100C206D5 /* CategoriesType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesType.swift; sourceTree = "<group>"; };
 		89681BAC2F29E22A00C206D5 /* TransactionModel+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransactionModel+Formatting.swift"; sourceTree = "<group>"; };
 		89681BAF2F29E6EA00C206D5 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		89681BB52F2A077500C206D5 /* MainProfileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProfileUseCase.swift; sourceTree = "<group>"; };
 		897BC1E12E8AA9F400D2B847 /* FinanceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		897BC1EE2E8AA9F700D2B847 /* FinanceAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinanceAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		897BC1F82E8AA9F700D2B847 /* FinanceAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinanceAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -608,6 +610,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		89681BB22F2A073100C206D5 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				89681BB52F2A077500C206D5 /* MainProfileUseCase.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		897BC1D82E8AA9F400D2B847 = {
 			isa = PBXGroup;
 			children = (
@@ -649,6 +659,7 @@
 		899F4F4E2F09A0910089F27E /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				89681BB22F2A073100C206D5 /* Profile */,
 				89681B992F1F50E300C206D5 /* Transactions */,
 				899F4F5E2F0AD3920089F27E /* Validation */,
 				899F4F4F2F09A09C0089F27E /* Auth */,
@@ -1103,6 +1114,7 @@
 				89D1701B2EC74BE400BFF118 /* LoginViewModel+Router.swift in Sources */,
 				891960572EF7D43B005DDFE7 /* CoursesView.swift in Sources */,
 				894B43022E940CA800F429B3 /* CoordinatorFactoryProtocols.swift in Sources */,
+				89681BB62F2A077500C206D5 /* MainProfileUseCase.swift in Sources */,
 				89681BA12F20C14C00C206D5 /* Date+Formatting.swift in Sources */,
 				899F4F5D2F09A7530089F27E /* RepositoryFactory.swift in Sources */,
 				891A081F2EC866C9004E7890 /* RegistrationViewState.swift in Sources */,

@@ -28,9 +28,9 @@ final class TransactionsViewModel: ObservableObject
     @Published
     private(set) var transactionsListState: TransactionsListState
 
-    private let useCase: TransactionsUseCase
+    private let useCase: TransactionsUseCaseProtocol
 
-    init(useCase: TransactionsUseCase) {
+    init(useCase: TransactionsUseCaseProtocol) {
         self.transactionsListState = .idle
         self.useCase = useCase
     }

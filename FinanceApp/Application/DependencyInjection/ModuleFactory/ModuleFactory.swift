@@ -64,7 +64,10 @@ extension ModuleFactory: MainProfileViewFactory
             settingsHandler: coordinator.settingsHandler,
             profileDetailsHandler: coordinator.profileDetailsHandler
         )
-        let viewModel = MainProfileViewModel(router: router)
+        let viewModel = MainProfileViewModel(
+            router: router,
+            profileUseCase: self.useCaseFactory.makeMainProfileUseCase()
+        )
         return MainProfileViewContainer(viewModel: viewModel)
     }
 }

@@ -10,13 +10,18 @@ import Foundation
 final class MainProfileViewModel: ObservableObject
 {
     private let router: Router
+    private let profileUseCase: MainProfileUseCaseProtocol
+    private(set) var profileInformation = UserModel()
 
-    init(router: Router) {
+    init(router: Router, profileUseCase: MainProfileUseCaseProtocol) {
         self.router = router
+        self.profileUseCase = profileUseCase
     }
 
     func handle(_ event: Event) {
         switch event {
+        case .onAppear:
+            self.handleOnAppear()
         case .editButtonTapped:
             self.profileDetailsTapped()
         case .settingsButtonTapped:
@@ -29,10 +34,14 @@ final class MainProfileViewModel: ObservableObject
 
 private extension MainProfileViewModel
 {
-    func handleLogout() {
-        UserDefaults.standard.set(false, forKey: "login")
-        self.router.logout()
+    func handleOnAppear() {
+        Task {
+            do {
+                self.profileInformation = try await self.profileUseCase.execute()
+            } catch {}
+        }
     }
+    func handleLogout() {self.router.logout()}
     func settingsTapped() {self.router.settingsHandler()}
     func profileDetailsTapped() {self.router.profileDetailsHandler()}
 }
