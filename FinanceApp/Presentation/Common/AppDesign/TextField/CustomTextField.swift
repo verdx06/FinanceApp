@@ -171,12 +171,6 @@ extension Color
             text: .constant("")
         )
 
-        // Phone number field
-        CustomTextField(
-            fieldType: .phoneNumber,
-            text: .constant("")
-        )
-
         // Optional text field
         CustomTextField(
             fieldType: .text,

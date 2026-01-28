@@ -48,6 +48,13 @@ struct RegistrationView: View
                 }
             }
         }
+        .alert(isPresented: self.$viewModel.isAlert) {
+            Alert(
+                title: Text("Ошибка"),
+                message: Text(self.viewModel.state.alertError),
+                dismissButton: .default(Text("OK"))
+            )
+        }
     }
 }
 
@@ -68,11 +75,9 @@ private extension RegistrationView
 {
     var fields: some View {
         VStack {
-            CustomTextField(fieldType: .name, text: .constant(""))
-            CustomTextField(fieldType: .email, text: .constant(""))
-            CustomTextField(fieldType: .phoneNumber, text: .constant(""))
-            CustomTextField(fieldType: .password, text: .constant(""))
-            CustomTextField(fieldType: .password, text: .constant(""))
+            CustomTextField(fieldType: .name, text: self.name, error: self.viewModel.state.name.error)
+            CustomTextField(fieldType: .email, text: self.email, error: self.viewModel.state.email.error)
+            CustomTextField(fieldType: .password, text: self.password, error: self.viewModel.state.password.error)
         }.padding(.horizontal)
     }
 
@@ -82,7 +87,9 @@ private extension RegistrationView
                 self.viewModel.handle(.signUpButtomTapped)
             } label: {
                 Text("Sign Up")
-            }.mainAuthButtonStyle()
+            }
+            .padding(.horizontal)
+            .mainAuthButtonStyle(isLoading: self.viewModel.state.registrationState == .loading)
 
             HStack {
                 Text("Already have an account?")
@@ -96,5 +103,29 @@ private extension RegistrationView
                 }
             }.padding(.top)
         }.padding(.top, 30)
+    }
+}
+
+private extension RegistrationView
+{
+    var name: Binding<String> {
+        Binding(
+            get: { self.viewModel.state.name.content },
+            set: { self.viewModel.handle(.nameChanged(name: $0)) }
+        )
+    }
+
+    var email: Binding<String> {
+        Binding(
+            get: { self.viewModel.state.email.content },
+            set: { self.viewModel.handle(.emailChanged(email: $0)) }
+        )
+    }
+
+    var password: Binding<String> {
+        Binding(
+            get: { self.viewModel.state.password.content },
+            set: { self.viewModel.handle(.passwordChanged(password: $0)) }
+        )
     }
 }

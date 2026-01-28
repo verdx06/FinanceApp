@@ -11,5 +11,5 @@ enum OperationType: Equatable, Hashable
 {
     case all
     case income
-    case expenditure
+    case expense
 }

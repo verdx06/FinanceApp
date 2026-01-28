@@ -10,7 +10,7 @@ import Foundation
 enum ValidateErrorHandler
 {
     static func message(_ error: Error) -> String {
-        if let emailError = error as? ValidateAuthUseCase.EmailValidationError {
+        if let emailError = error as? ValidateEmailUseCase.EmailValidationError {
             return self.emailMessage(emailError)
         }
 
@@ -23,7 +23,7 @@ enum ValidateErrorHandler
 
 extension ValidateErrorHandler
 {
-    private static func emailMessage(_ error: ValidateAuthUseCase.EmailValidationError) -> String {
+    private static func emailMessage(_ error: ValidateEmailUseCase.EmailValidationError) -> String {
         switch error {
         case .invalidFormat:
             "Неверный формат почты"
@@ -34,6 +34,12 @@ extension ValidateErrorHandler
         switch error {
         case .lenghtIsMin:
             "Длина меньше требуемой"
+        case .noNumber:
+            "Добавьте цифры"
+        case .noLower:
+            "Добавьте нижний регистр"
+        case .noUpper:
+            "Добавьте верхний регистр"
         }
     }
 }

@@ -41,14 +41,36 @@ final class SupabaseManager
     )
 
     init() {}
+}
 
+// MARK: Transactions
+extension SupabaseManager
+{
+    func getTransactions() async throws -> [TransactionModel] {
+            let user = try await supabase.auth.session.user
+            let response: [TransactionModel] = try await supabase
+                .database
+                .from("transactions")
+                .select()
+                .eq("user_id", value: user.id)
+                .order("occurred_at", ascending: false)
+                .execute()
+                .value
+
+            return response
+        }
+}
+
+// MARK: Auth
+extension SupabaseManager
+{
     // регистрация в supabase
-    func signUp(name: String, phone: String, email: String, password: String) async throws {
+    func signUp(name: String, phone: String?, email: String, password: String) async throws {
         try await supabase.auth.signUp(email: email, password: password)
 
         let user = try await supabase.auth.session.user
 
-        let newUser = UserModel(id: user.id, name: name, email: email, phone: phone)
+        let newUser = UserModel(id: user.id, name: name, email: email, phone: phone ?? "")
 
         try await supabase.database.from("users")
             .insert(newUser)

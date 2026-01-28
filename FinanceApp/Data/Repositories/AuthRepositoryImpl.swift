@@ -18,7 +18,17 @@ final class AuthRepositoryImpl
 
 extension AuthRepositoryImpl: AuthRepository
 {
+    func signup(user: UserRegistration) async throws {
+        try await self.networkService
+            .signUp(
+                name: user.name,
+                phone: user.phoneNumber,
+                email: user.email,
+                password: user.password
+            )
+    }
+
     func login(credentials: AuthCredentials) async throws {
-        try await networkService.signIn(email: credentials.email, password: credentials.password)
+        try await self.networkService.signIn(email: credentials.email, password: credentials.password)
     }
 }

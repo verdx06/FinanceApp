@@ -10,4 +10,5 @@ import Foundation
 protocol AuthRepository
 {
     func login(credentials: AuthCredentials) async throws
+    func signup(user: UserRegistration) async throws
 }

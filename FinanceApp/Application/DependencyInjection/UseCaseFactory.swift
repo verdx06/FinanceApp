@@ -21,11 +21,30 @@ extension UseCaseFactory
     func makeLoginUseCase() -> LoginUseCaseProtocol {
         LoginUseCase(authRepository: self.repositoryFactory.authRepository)
     }
+
+    func makeRegistrationUseCase() -> RegistrationUseCaseProtocol {
+        RegistrationUseCase(authRepository: self.repositoryFactory.authRepository)
+    }
 }
 
 extension UseCaseFactory
 {
-    func makeValidateEmailUseCase() -> ValidateAuthUseCaseProtocol {
-        ValidateAuthUseCase()
+    func makeValidateEmailUseCase() -> ValidateEmailUseCaseProtocol {
+        ValidateEmailUseCase()
+    }
+
+    func makeValidatePasswordUseCase() -> ValidatePasswordUseCaseProtocol {
+        ValidatePasswordUseCase()
+    }
+
+    func makeValidateNameUseCase() -> ValidateNameUseCaseProtocol {
+        ValidateNameUseCase()
+    }
+}
+
+extension UseCaseFactory
+{
+    func makeTransactionsUseCase() -> TransactionsUseCase {
+        TransactionsUseCase(repository: self.repositoryFactory.transactionsRepository)
     }
 }

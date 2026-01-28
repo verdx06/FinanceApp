@@ -11,4 +11,5 @@ final class RepositoryFactory
 {
     lazy var networkService = SupabaseManager()
     lazy var authRepository = AuthRepositoryImpl(networkService: self.networkService)
+    lazy var transactionsRepository = TransactionsRepositoryImpl(networkService: self.networkService)
 }

@@ -12,16 +12,26 @@ final class LoginViewModel: ObservableObject
 {
     private let router: Router
     private let loginUseCase: LoginUseCaseProtocol
-    private let validateUseCase: ValidateAuthUseCaseProtocol
+    private let validateEmailUseCase: ValidateEmailUseCaseProtocol
+    private let validatePasswordUseCase: ValidatePasswordUseCaseProtocol
 
     @Published
     private(set) var state: ViewState
 
-    init(router: Router, loginUseCase: LoginUseCaseProtocol, validateUseCase: ValidateAuthUseCaseProtocol) {
+    @Published
+    var isAlert: Bool = false
+
+    init(
+        router: Router,
+        loginUseCase: LoginUseCaseProtocol,
+        validateEmailUseCase: ValidateEmailUseCaseProtocol,
+        validatePasswordUseCase: ValidatePasswordUseCaseProtocol
+    ) {
         self.router = router
         self.state = ViewState(loginState: .initial)
         self.loginUseCase = loginUseCase
-        self.validateUseCase = validateUseCase
+        self.validateEmailUseCase = validateEmailUseCase
+        self.validatePasswordUseCase = validatePasswordUseCase
     }
 
     func handle(_ event: Event) {
@@ -47,15 +57,19 @@ private extension LoginViewModel
     func handleLogin() {
         if self.state.isContinueDisabled == false {
             let credentials = AuthCredentials(email: self.state.email.content, password: self.state.password.content)
-            Task {
+            Task { @MainActor in
+                self.state.loginState = .loading
+                defer { self.state.loginState = .initial }
                 do {
-                    self.state.loginState = .loading
                     try await self.loginUseCase.execute(credentials: credentials)
                     UserDefaults.standard.set(true, forKey: "login")
                     self.router.showMainFlowHandler()
                 } catch {
-                    self.state.loginState = .initial
+                    #if DEBUG
                     print(error.localizedDescription)
+                    #endif
+                    self.state.alertError = error.localizedDescription
+                    self.isAlert = true
                 }
             }
         }
@@ -65,7 +79,7 @@ private extension LoginViewModel
         self.state.email.content = email
 
         do {
-            try self.validateUseCase.executeEmail(email)
+            try self.validateEmailUseCase.execute(email)
             self.state.email.error = nil
         } catch {
             self.state.email.error = ValidateErrorHandler.message(error)
@@ -76,7 +90,7 @@ private extension LoginViewModel
         self.state.password.content = password
 
         do {
-            try self.validateUseCase.executePassword(password)
+            try self.validatePasswordUseCase.execute(password, additional: false)
             self.state.password.error = nil
         } catch {
             self.state.password.error = ValidateErrorHandler.message(error)

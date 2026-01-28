@@ -27,6 +27,7 @@ final class HomeCoordinator: ObservableObject
 
 extension HomeCoordinator
 {
+    @MainActor
     func build(_ screen: Screen) -> some View {
         switch screen {
         case .home:

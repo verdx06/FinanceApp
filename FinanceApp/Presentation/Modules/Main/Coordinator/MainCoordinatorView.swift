@@ -13,6 +13,7 @@ struct MainCoordinatorView: View
     private let profileCoordinator: ProfileCoordinator
     private let coursesCoordinator: CoursesCoordinator
     private let homeCoordinator: HomeCoordinator
+    private let transactionsCoordinator: TransactionsCoordinator
 
     @ObservedObject
     private var mainCoordinator: MainCoordinator
@@ -24,12 +25,14 @@ struct MainCoordinatorView: View
         profileCoordinator: ProfileCoordinator,
         coursesCoordinator: CoursesCoordinator,
         homeCoordinator: HomeCoordinator,
-        mainCoordinator: MainCoordinator
+        mainCoordinator: MainCoordinator,
+        transactionsCoordinator: TransactionsCoordinator
     ) {
         self.profileCoordinator = profileCoordinator
         self.coursesCoordinator = coursesCoordinator
         self.homeCoordinator = homeCoordinator
         self.mainCoordinator = mainCoordinator
+        self.transactionsCoordinator = transactionsCoordinator
     }
 
     var body: some View {
@@ -44,7 +47,7 @@ struct MainCoordinatorView: View
             case .analysis:
                 Text("Lol")
             case .transactions:
-                Text("Transactions")
+                TransactionsCoordinatorView(coordinator: self.transactionsCoordinator)
             case .cases:
                 CoursesCoordinatorView(coursesCoordinator: self.coursesCoordinator)
                     .tag(MainCoordinator.Tab.cases)
@@ -86,6 +89,10 @@ extension MainCoordinatorView
         homeCoordinator: HomeCoordinator(
             modularFactory: ModuleFactory(useCaseFactory: UseCaseFactory(repositoryFactory: RepositoryFactory()))
         ),
-        mainCoordinator: MainCoordinator()
+        mainCoordinator: MainCoordinator(),
+        transactionsCoordinator:
+            TransactionsCoordinator(moduleFactory:
+                                        ModuleFactory(useCaseFactory:
+                                                        UseCaseFactory(repositoryFactory: RepositoryFactory())))
     )
 }

@@ -49,6 +49,11 @@ struct LoginView: View
                 }
             }
         }
+        .alert("Ошибка", isPresented: self.$viewModel.isAlert) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text(self.viewModel.state.alertError)
+        }
     }
 }
 
@@ -92,18 +97,14 @@ private extension LoginView
             Button {
                 self.viewModel.handle(.loginTapped)
             } label: {
-                if self.viewModel.state.loginState == .loading {
-                    ProgressView()
-                } else {
-                    Text("Log In")
-                }
+                Text("Log In")
             }
             .mainAuthButtonStyle(isLoading: self.viewModel.state.loginState == .loading)
             .disabled(self.viewModel.state.loginState == .loading)
             .padding(.horizontal, 30)
-            Spacer()
+
             HStack {
-                Text("Dont have account?")
+                Text("Don't have account?")
                     .font(.system(size: 14))
                 Button {
                     self.viewModel.handle(.signupTapped)
@@ -112,6 +113,7 @@ private extension LoginView
                         .foregroundStyle(.blue)
                         .font(.system(size: 14))
                 }
+                .disabled(self.viewModel.state.loginState == .loading)
             }.padding(.top)
         }
     }

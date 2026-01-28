@@ -9,8 +9,9 @@ import Foundation
 
 protocol ValidateAuthUseCaseProtocol
 {
+    func execute(_ field: String) throws
     func executeEmail(_ email: String) throws
-    func executePassword(_ password: String) throws
+    func executePassword(_ password: String, additional: Bool) throws
 }
 
 final class ValidateAuthUseCase
@@ -25,8 +26,18 @@ final class ValidateAuthUseCase
 
 extension ValidateAuthUseCase: ValidateAuthUseCaseProtocol
 {
-    func executePassword(_ password: String) throws {
+    func execute(_ field: String) throws {
+        try self.generalValidate.isLenghtIsMin(filed: field, min: 2)
+    }
+
+    func executePassword(_ password: String, additional: Bool) throws {
         try self.generalValidate.isLenghtIsMin(filed: password, min: 5)
+
+        if additional {
+            try self.generalValidate.isLowercase(field: password)
+            try self.generalValidate.isUppercase(field: password)
+            try self.generalValidate.isNumber(field: password)
+        }
     }
 
     func executeEmail(_ email: String) throws {

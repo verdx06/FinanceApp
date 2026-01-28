@@ -47,7 +47,14 @@ protocol CoursesViewFactory: AnyObject
     func makeCoursesView() -> CoursesViewContainer
 }
 
+@MainActor
 protocol HomeViewFactory: AnyObject
 {
     func makeHomeView(coordinator: HomeCoordinator) -> HomeViewContainer
+}
+
+@MainActor
+protocol TransactionsViewFactory
+{
+    func makeTransactionsView() -> TransactionsViewContainer
 }

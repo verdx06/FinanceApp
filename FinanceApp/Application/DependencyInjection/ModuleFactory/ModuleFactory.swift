@@ -26,8 +26,12 @@ extension ModuleFactory: LoginViewFactory
         )
         let viewModel = LoginViewModel(
             router: router,
-            loginUseCase: self.useCaseFactory.makeLoginUseCase(),
-            validateUseCase: self.useCaseFactory.makeValidateEmailUseCase()
+            loginUseCase: self.useCaseFactory
+                .makeLoginUseCase(),
+            validateEmailUseCase: self.useCaseFactory
+                .makeValidateEmailUseCase(),
+            validatePasswordUseCase: self.useCaseFactory
+                .makeValidatePasswordUseCase()
         )
         return LoginViewContainer(viewModel: viewModel)
     }
@@ -38,10 +42,16 @@ extension ModuleFactory: RegistrationViewFactory
     @MainActor
     func makeRegistrationView(coordinator: RegistrationCoordinator) -> RegistrationViewContainer {
         let router = RegistrationViewModel.Router(
-            signUpHandler: {},
+            signUpHandler: { coordinator.showLoginFlow() },
             showLoginFlowHandler: { coordinator.showLoginFlow() }
         )
-        let viewModel = RegistrationViewModel(router: router)
+        let viewModel = RegistrationViewModel(
+            router: router,
+            registrationUseCase: self.useCaseFactory.makeRegistrationUseCase(),
+            validateEmailUseCase: self.useCaseFactory.makeValidateEmailUseCase(),
+            validatePasswordUseCase: self.useCaseFactory.makeValidatePasswordUseCase(),
+            validateNameUseCase: self.useCaseFactory.makeValidateNameUseCase()
+        )
         return RegistrationViewContainer(viewModel: viewModel)
     }
 }
@@ -86,5 +96,13 @@ extension ModuleFactory: HomeViewFactory
     func makeHomeView(coordinator: HomeCoordinator) -> HomeViewContainer {
         let viewModel = HomeViewModel()
         return HomeViewContainer(viewModel: viewModel)
+    }
+}
+
+extension ModuleFactory: TransactionsViewFactory
+{
+    func makeTransactionsView() -> TransactionsViewContainer {
+        let viewModel = TransactionsViewModel(useCase: self.useCaseFactory.makeTransactionsUseCase())
+        return TransactionsViewContainer(viewModel: viewModel)
     }
 }

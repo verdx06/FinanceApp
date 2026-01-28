@@ -19,3 +19,4 @@ typealias AuthCoordinatorFactory =
 typealias ProfileCoordinatorFactory = MainProfileViewFactory & ProfileDetailsViewFactory & ProfileSettingsViewFactory
 typealias CoursesCoordinatorFactory = CoursesViewFactory
 typealias HomeCoordinatorFactory = HomeViewFactory
+typealias TransactionsCoordinatorFactory = TransactionsViewFactory

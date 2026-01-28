@@ -38,6 +38,23 @@
 		894B43002E9409B100F429B3 /* LoginViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894B42FF2E9409B100F429B3 /* LoginViewContainer.swift */; };
 		894B43022E940CA800F429B3 /* CoordinatorFactoryProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894B43012E940CA800F429B3 /* CoordinatorFactoryProtocols.swift */; };
 		894B43042E940CEC00F429B3 /* ModuleFactoryProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894B43032E940CEC00F429B3 /* ModuleFactoryProtocols.swift */; };
+		89681B882F1F43FE00C206D5 /* TransactionsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89681B872F1F43FE00C206D5 /* TransactionsCoordinator.swift */; };
+		89681B8A2F1F440C00C206D5 /* TransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89681B892F1F440C00C206D5 /* TransactionsView.swift */; };
+		89681B8C2F1F445400C206D5 /* TransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89681B8B2F1F445400C206D5 /* TransactionsViewModel.swift */; };
+		89681B8E2F1F449E00C206D5 /* TransactionsViewModel+Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89681B8D2F1F449E00C206D5 /* TransactionsViewModel+Event.swift */; };
+		89681B902F1F45D400C206D5 /* TransactionsViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89681B8F2F1F45D400C206D5 /* TransactionsViewContainer.swift */; };
+		89681B922F1F4B5200C206D5 /* TransactionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89681B912F1F4B5200C206D5 /* TransactionsModel.swift */; };
+		89681B942F1F4CBA00C206D5 /* TransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89681B932F1F4CBA00C206D5 /* TransactionType.swift */; };
+		89681B962F1F4F6100C206D5 /* TransactionsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89681B952F1F4F6100C206D5 /* TransactionsRepository.swift */; };
+		89681B982F1F4FA700C206D5 /* TransactionsRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89681B972F1F4FA700C206D5 /* TransactionsRepositoryImpl.swift */; };
+		89681B9B2F1F50F900C206D5 /* TransactionsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89681B9A2F1F50F900C206D5 /* TransactionsUseCase.swift */; };
+		89681B9D2F1F53A100C206D5 /* TransactionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89681B9C2F1F53A100C206D5 /* TransactionsListView.swift */; };
+		89681B9F2F1F56A800C206D5 /* TransactionsCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89681B9E2F1F56A800C206D5 /* TransactionsCoordinatorView.swift */; };
+		89681BA12F20C14C00C206D5 /* Date+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89681BA02F20C14300C206D5 /* Date+Formatting.swift */; };
+		89681BA52F20CFC400C206D5 /* TransactionsList+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89681BA42F20CFC400C206D5 /* TransactionsList+State.swift */; };
+		89681BA92F286F9100C206D5 /* CategoriesType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89681BA82F286F9100C206D5 /* CategoriesType.swift */; };
+		89681BAD2F29E22A00C206D5 /* TransactionModel+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89681BAC2F29E22A00C206D5 /* TransactionModel+Formatting.swift */; };
+		89681BB02F29E6EE00C206D5 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89681BAF2F29E6EA00C206D5 /* Double.swift */; };
 		899F4F262F0840C60089F27E /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899F4F252F0840C60089F27E /* View.swift */; };
 		899F4F282F0842D30089F27E /* ScrollDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899F4F272F0842D30089F27E /* ScrollDetector.swift */; };
 		899F4F342F090CC50089F27E /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899F4F332F090CC50089F27E /* Routable.swift */; };
@@ -54,9 +71,13 @@
 		899F4F592F09A2480089F27E /* AuthRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899F4F582F09A2480089F27E /* AuthRepositoryImpl.swift */; };
 		899F4F5B2F09A7150089F27E /* UseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899F4F5A2F09A7150089F27E /* UseCaseFactory.swift */; };
 		899F4F5D2F09A7530089F27E /* RepositoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899F4F5C2F09A7530089F27E /* RepositoryFactory.swift */; };
-		899F4F602F0AD3B10089F27E /* ValidateAuthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899F4F5F2F0AD3B10089F27E /* ValidateAuthUseCase.swift */; };
 		899F4F642F0ADEDA0089F27E /* ValidateErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899F4F632F0ADEDA0089F27E /* ValidateErrorHandler.swift */; };
 		899F4F6A2F0AE95F0089F27E /* GeneralValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899F4F692F0AE95F0089F27E /* GeneralValidator.swift */; };
+		899F4F6C2F0C325B0089F27E /* ValidateEmailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899F4F6B2F0C325B0089F27E /* ValidateEmailUseCase.swift */; };
+		899F4F6E2F0C326A0089F27E /* ValidatePasswordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899F4F6D2F0C326A0089F27E /* ValidatePasswordUseCase.swift */; };
+		899F4F702F0C327B0089F27E /* ValidateNameUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899F4F6F2F0C327B0089F27E /* ValidateNameUseCase.swift */; };
+		899F4F722F0C3A040089F27E /* RegistrationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899F4F712F0C3A040089F27E /* RegistrationUseCase.swift */; };
+		899F4F742F0C3A480089F27E /* UserRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899F4F732F0C3A480089F27E /* UserRegistration.swift */; };
 		89A7E2822EEDB2DF00287FD8 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A7E2812EEDB2DF00287FD8 /* MainCoordinator.swift */; };
 		89A7E2842EEDB2F100287FD8 /* MainCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A7E2832EEDB2F100287FD8 /* MainCoordinatorView.swift */; };
 		89A7E2882EEDB5B400287FD8 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A7E2872EEDB5B400287FD8 /* HomeCoordinator.swift */; };
@@ -138,6 +159,23 @@
 		894B42FF2E9409B100F429B3 /* LoginViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewContainer.swift; sourceTree = "<group>"; };
 		894B43012E940CA800F429B3 /* CoordinatorFactoryProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactoryProtocols.swift; sourceTree = "<group>"; };
 		894B43032E940CEC00F429B3 /* ModuleFactoryProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactoryProtocols.swift; sourceTree = "<group>"; };
+		89681B872F1F43FE00C206D5 /* TransactionsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsCoordinator.swift; sourceTree = "<group>"; };
+		89681B892F1F440C00C206D5 /* TransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsView.swift; sourceTree = "<group>"; };
+		89681B8B2F1F445400C206D5 /* TransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModel.swift; sourceTree = "<group>"; };
+		89681B8D2F1F449E00C206D5 /* TransactionsViewModel+Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransactionsViewModel+Event.swift"; sourceTree = "<group>"; };
+		89681B8F2F1F45D400C206D5 /* TransactionsViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewContainer.swift; sourceTree = "<group>"; };
+		89681B912F1F4B5200C206D5 /* TransactionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsModel.swift; sourceTree = "<group>"; };
+		89681B932F1F4CBA00C206D5 /* TransactionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionType.swift; sourceTree = "<group>"; };
+		89681B952F1F4F6100C206D5 /* TransactionsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsRepository.swift; sourceTree = "<group>"; };
+		89681B972F1F4FA700C206D5 /* TransactionsRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsRepositoryImpl.swift; sourceTree = "<group>"; };
+		89681B9A2F1F50F900C206D5 /* TransactionsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsUseCase.swift; sourceTree = "<group>"; };
+		89681B9C2F1F53A100C206D5 /* TransactionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListView.swift; sourceTree = "<group>"; };
+		89681B9E2F1F56A800C206D5 /* TransactionsCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsCoordinatorView.swift; sourceTree = "<group>"; };
+		89681BA02F20C14300C206D5 /* Date+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatting.swift"; sourceTree = "<group>"; };
+		89681BA42F20CFC400C206D5 /* TransactionsList+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransactionsList+State.swift"; sourceTree = "<group>"; };
+		89681BA82F286F9100C206D5 /* CategoriesType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesType.swift; sourceTree = "<group>"; };
+		89681BAC2F29E22A00C206D5 /* TransactionModel+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TransactionModel+Formatting.swift"; sourceTree = "<group>"; };
+		89681BAF2F29E6EA00C206D5 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		897BC1E12E8AA9F400D2B847 /* FinanceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		897BC1EE2E8AA9F700D2B847 /* FinanceAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinanceAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		897BC1F82E8AA9F700D2B847 /* FinanceAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinanceAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,9 +192,13 @@
 		899F4F582F09A2480089F27E /* AuthRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepositoryImpl.swift; sourceTree = "<group>"; };
 		899F4F5A2F09A7150089F27E /* UseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseFactory.swift; sourceTree = "<group>"; };
 		899F4F5C2F09A7530089F27E /* RepositoryFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryFactory.swift; sourceTree = "<group>"; };
-		899F4F5F2F0AD3B10089F27E /* ValidateAuthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateAuthUseCase.swift; sourceTree = "<group>"; };
 		899F4F632F0ADEDA0089F27E /* ValidateErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateErrorHandler.swift; sourceTree = "<group>"; };
 		899F4F692F0AE95F0089F27E /* GeneralValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralValidator.swift; sourceTree = "<group>"; };
+		899F4F6B2F0C325B0089F27E /* ValidateEmailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateEmailUseCase.swift; sourceTree = "<group>"; };
+		899F4F6D2F0C326A0089F27E /* ValidatePasswordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatePasswordUseCase.swift; sourceTree = "<group>"; };
+		899F4F6F2F0C327B0089F27E /* ValidateNameUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateNameUseCase.swift; sourceTree = "<group>"; };
+		899F4F712F0C3A040089F27E /* RegistrationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationUseCase.swift; sourceTree = "<group>"; };
+		899F4F732F0C3A480089F27E /* UserRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistration.swift; sourceTree = "<group>"; };
 		89A7E2812EEDB2DF00287FD8 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		89A7E2832EEDB2F100287FD8 /* MainCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorView.swift; sourceTree = "<group>"; };
 		89A7E2872EEDB5B400287FD8 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
@@ -265,6 +307,8 @@
 		891A08162EC85220004E7890 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				89681BAC2F29E22A00C206D5 /* TransactionModel+Formatting.swift */,
+				89681BA02F20C14300C206D5 /* Date+Formatting.swift */,
 				891A08172EC85231004E7890 /* TextFieldState.swift */,
 				899F4F272F0842D30089F27E /* ScrollDetector.swift */,
 				899F4F632F0ADEDA0089F27E /* ValidateErrorHandler.swift */,
@@ -278,6 +322,9 @@
 				891A081A2EC852B4004E7890 /* FieldType.swift */,
 				899F4F392F098BFD0089F27E /* OperationType.swift */,
 				899F4F552F09A1AC0089F27E /* AuthCredentials.swift */,
+				899F4F732F0C3A480089F27E /* UserRegistration.swift */,
+				89681B932F1F4CBA00C206D5 /* TransactionType.swift */,
+				89681BA82F286F9100C206D5 /* CategoriesType.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -379,6 +426,7 @@
 		894B42DE2E9243D600F429B3 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				89681BAE2F29E6E300C206D5 /* Extensions */,
 				899F4F322F090CB90089F27E /* Protocols */,
 				891A08162EC85220004E7890 /* Helpers */,
 				894B42DF2E9243DB00F429B3 /* AppDesign */,
@@ -505,6 +553,61 @@
 			path = ModuleFactory;
 			sourceTree = "<group>";
 		};
+		89681B832F1F43C500C206D5 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				89681B842F1F43DD00C206D5 /* Coordinator */,
+				89681B852F1F43E400C206D5 /* View */,
+				89681B862F1F43E900C206D5 /* ViewModel */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
+		89681B842F1F43DD00C206D5 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				89681B872F1F43FE00C206D5 /* TransactionsCoordinator.swift */,
+				89681B9E2F1F56A800C206D5 /* TransactionsCoordinatorView.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		89681B852F1F43E400C206D5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				89681B892F1F440C00C206D5 /* TransactionsView.swift */,
+				89681B9C2F1F53A100C206D5 /* TransactionsListView.swift */,
+				89681B8F2F1F45D400C206D5 /* TransactionsViewContainer.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		89681B862F1F43E900C206D5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				89681B8B2F1F445400C206D5 /* TransactionsViewModel.swift */,
+				89681B8D2F1F449E00C206D5 /* TransactionsViewModel+Event.swift */,
+				89681BA42F20CFC400C206D5 /* TransactionsList+State.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		89681B992F1F50E300C206D5 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				89681B9A2F1F50F900C206D5 /* TransactionsUseCase.swift */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
+		89681BAE2F29E6E300C206D5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				89681BAF2F29E6EA00C206D5 /* Double.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		897BC1D82E8AA9F400D2B847 = {
 			isa = PBXGroup;
 			children = (
@@ -538,6 +641,7 @@
 			isa = PBXGroup;
 			children = (
 				899F4F4C2F099F7E0089F27E /* UserModel.swift */,
+				89681B912F1F4B5200C206D5 /* TransactionsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -545,6 +649,7 @@
 		899F4F4E2F09A0910089F27E /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				89681B992F1F50E300C206D5 /* Transactions */,
 				899F4F5E2F0AD3920089F27E /* Validation */,
 				899F4F4F2F09A09C0089F27E /* Auth */,
 			);
@@ -555,6 +660,7 @@
 			isa = PBXGroup;
 			children = (
 				899F4F502F09A0B20089F27E /* LoginUseCase.swift */,
+				899F4F712F0C3A040089F27E /* RegistrationUseCase.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -563,6 +669,7 @@
 			isa = PBXGroup;
 			children = (
 				899F4F532F09A1440089F27E /* AuthRepository.swift */,
+				89681B952F1F4F6100C206D5 /* TransactionsRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -571,6 +678,7 @@
 			isa = PBXGroup;
 			children = (
 				899F4F582F09A2480089F27E /* AuthRepositoryImpl.swift */,
+				89681B972F1F4FA700C206D5 /* TransactionsRepositoryImpl.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -578,8 +686,10 @@
 		899F4F5E2F0AD3920089F27E /* Validation */ = {
 			isa = PBXGroup;
 			children = (
-				899F4F682F0AE8080089F27E /* Auth */,
 				899F4F692F0AE95F0089F27E /* GeneralValidator.swift */,
+				899F4F6B2F0C325B0089F27E /* ValidateEmailUseCase.swift */,
+				899F4F6D2F0C326A0089F27E /* ValidatePasswordUseCase.swift */,
+				899F4F6F2F0C327B0089F27E /* ValidateNameUseCase.swift */,
 			);
 			path = Validation;
 			sourceTree = "<group>";
@@ -591,20 +701,13 @@
 			path = ViewModifiers;
 			sourceTree = "<group>";
 		};
-		899F4F682F0AE8080089F27E /* Auth */ = {
-			isa = PBXGroup;
-			children = (
-				899F4F5F2F0AD3B10089F27E /* ValidateAuthUseCase.swift */,
-			);
-			path = Auth;
-			sourceTree = "<group>";
-		};
 		89A7E27B2EED653E00287FD8 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				89A7E27C2EED658B00287FD8 /* Coordinator */,
 				891960532EF7D41F005DDFE7 /* Courses */,
 				89A7E27E2EEDB2B800287FD8 /* Home */,
+				89681B832F1F43C500C206D5 /* Transactions */,
 				89A7E27D2EEDB2B800287FD8 /* Profile */,
 			);
 			path = Main;
@@ -984,21 +1087,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				894B42EB2E92D44C00F429B3 /* AuthCoordinatorView.swift in Sources */,
+				89681B882F1F43FE00C206D5 /* TransactionsCoordinator.swift in Sources */,
+				89681BB02F29E6EE00C206D5 /* Double.swift in Sources */,
+				89681B962F1F4F6100C206D5 /* TransactionsRepository.swift in Sources */,
 				899F4F542F09A1440089F27E /* AuthRepository.swift in Sources */,
+				899F4F702F0C327B0089F27E /* ValidateNameUseCase.swift in Sources */,
+				899F4F6E2F0C326A0089F27E /* ValidatePasswordUseCase.swift in Sources */,
 				89ADDA272E955EF900D1D148 /* RegistrationViewModel.swift in Sources */,
 				8919605E2EF7D889005DDFE7 /* CoursesCoordinator.swift in Sources */,
 				894B43002E9409B100F429B3 /* LoginViewContainer.swift in Sources */,
+				89681B8E2F1F449E00C206D5 /* TransactionsViewModel+Event.swift in Sources */,
 				89A7E2B42EF2A89F00287FD8 /* MainProfileViewModel+Event.swift in Sources */,
+				89681B9D2F1F53A100C206D5 /* TransactionsListView.swift in Sources */,
 				899F4F5B2F09A7150089F27E /* UseCaseFactory.swift in Sources */,
 				89D1701B2EC74BE400BFF118 /* LoginViewModel+Router.swift in Sources */,
 				891960572EF7D43B005DDFE7 /* CoursesView.swift in Sources */,
 				894B43022E940CA800F429B3 /* CoordinatorFactoryProtocols.swift in Sources */,
+				89681BA12F20C14C00C206D5 /* Date+Formatting.swift in Sources */,
 				899F4F5D2F09A7530089F27E /* RepositoryFactory.swift in Sources */,
 				891A081F2EC866C9004E7890 /* RegistrationViewState.swift in Sources */,
+				89681B922F1F4B5200C206D5 /* TransactionsModel.swift in Sources */,
 				89A7E2902EEDB91E00287FD8 /* MainProfileView.swift in Sources */,
+				89681BA92F286F9100C206D5 /* CategoriesType.swift in Sources */,
 				899F4F6A2F0AE95F0089F27E /* GeneralValidator.swift in Sources */,
+				89681BAD2F29E22A00C206D5 /* TransactionModel+Formatting.swift in Sources */,
+				89681B9B2F1F50F900C206D5 /* TransactionsUseCase.swift in Sources */,
 				899F4F642F0ADEDA0089F27E /* ValidateErrorHandler.swift in Sources */,
-				899F4F602F0AD3B10089F27E /* ValidateAuthUseCase.swift in Sources */,
+				899F4F6C2F0C325B0089F27E /* ValidateEmailUseCase.swift in Sources */,
+				89681BA52F20CFC400C206D5 /* TransactionsList+State.swift in Sources */,
 				894B42DB2E92427100F429B3 /* AppCoordinator.swift in Sources */,
 				894B42F42E92D5A200F429B3 /* LoginCoordinator.swift in Sources */,
 				89A7E28C2EEDB62E00287FD8 /* ProfileCoordinator.swift in Sources */,
@@ -1007,16 +1123,19 @@
 				89ADDA252E955EEE00D1D148 /* RegistrationViewContainer.swift in Sources */,
 				89A7E28E2EEDB63A00287FD8 /* ProfileCoordinatorView.swift in Sources */,
 				89F5F0902EFCFCE5008D4C2A /* HomeViewContainer.swift in Sources */,
+				89681B8A2F1F440C00C206D5 /* TransactionsView.swift in Sources */,
 				894B42FE2E94092700F429B3 /* ModuleFactory.swift in Sources */,
 				899F4F342F090CC50089F27E /* Routable.swift in Sources */,
 				899F4F4D2F099F7E0089F27E /* UserModel.swift in Sources */,
 				89ADDA232E955EE200D1D148 /* RegistrationView.swift in Sources */,
+				89681B902F1F45D400C206D5 /* TransactionsViewContainer.swift in Sources */,
 				89D78DC72EBDF316000B9C35 /* CustomButtonStyle.swift in Sources */,
 				899F4F282F0842D30089F27E /* ScrollDetector.swift in Sources */,
 				8919606A2EF85C41005DDFE7 /* MainProfileViewModel+Router.swift in Sources */,
 				89A7E2922EEDB92600287FD8 /* MainProfileViewContainer.swift in Sources */,
 				891960592EF7D447005DDFE7 /* CoursesViewCoordinator.swift in Sources */,
 				891A081B2EC852B6004E7890 /* FieldType.swift in Sources */,
+				899F4F742F0C3A480089F27E /* UserRegistration.swift in Sources */,
 				89ADDA2B2E955F8000D1D148 /* RegistrationCoordinatorView.swift in Sources */,
 				894B42E22E92447E00F429B3 /* SplashLoadingView.swift in Sources */,
 				899F4F562F09A1AC0089F27E /* AuthCredentials.swift in Sources */,
@@ -1027,6 +1146,7 @@
 				894B42E92E924B6B00F429B3 /* AuthCoordinator.swift in Sources */,
 				899F4F592F09A2480089F27E /* AuthRepositoryImpl.swift in Sources */,
 				89A7E2822EEDB2DF00287FD8 /* MainCoordinator.swift in Sources */,
+				89681B942F1F4CBA00C206D5 /* TransactionType.swift in Sources */,
 				894B43042E940CEC00F429B3 /* ModuleFactoryProtocols.swift in Sources */,
 				899F4F362F090F030089F27E /* HomeViewModel+Router.swift in Sources */,
 				89ADDA292E955F0900D1D148 /* RegistrationCoordinator.swift in Sources */,
@@ -1045,12 +1165,16 @@
 				891960602EF7D88B005DDFE7 /* CoursesCoordinatorView.swift in Sources */,
 				894B42DD2E9242E700F429B3 /* AppCoordinatorView.swift in Sources */,
 				899F4F512F09A0B20089F27E /* LoginUseCase.swift in Sources */,
+				89681B9F2F1F56A800C206D5 /* TransactionsCoordinatorView.swift in Sources */,
 				894B42F62E92D6D600F429B3 /* LoginCoordinatorView.swift in Sources */,
 				89A7E29E2EEDBAC600287FD8 /* ProfileDetailsContainer.swift in Sources */,
 				891A081D2EC86501004E7890 /* RegistrationViewModel+Router.swift in Sources */,
 				894B42F22E92D50700F429B3 /* LoginViewModel.swift in Sources */,
 				89F5F0982F002443008D4C2A /* HomeViewModel.swift in Sources */,
 				891A08182EC85231004E7890 /* TextFieldState.swift in Sources */,
+				89681B8C2F1F445400C206D5 /* TransactionsViewModel.swift in Sources */,
+				899F4F722F0C3A040089F27E /* RegistrationUseCase.swift in Sources */,
+				89681B982F1F4FA700C206D5 /* TransactionsRepositoryImpl.swift in Sources */,
 				89A7E2A02EEDBAE400287FD8 /* ProfileSettingsView.swift in Sources */,
 				89A7E28A2EEDB5C000287FD8 /* HomeCoordinatorView.swift in Sources */,
 				89A7E2882EEDB5B400287FD8 /* HomeCoordinator.swift in Sources */,

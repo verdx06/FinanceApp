@@ -39,6 +39,6 @@ struct HeaderView<Content: View>: View
                 alignment: .bottom
             )
             .offset(y: -offsetY)
-        }
+        }.frame(height: fullHeader)
     }
 }

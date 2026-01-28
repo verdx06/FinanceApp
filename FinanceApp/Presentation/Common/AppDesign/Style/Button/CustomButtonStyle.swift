@@ -55,6 +55,7 @@ struct CustomButtonStyle: ButtonStyle
                     .stroke(lineWidth: 2)
                     .foregroundStyle(colorStroke)
             }
+            .padding()
     }
 }
 

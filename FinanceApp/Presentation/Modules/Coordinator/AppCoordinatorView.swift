@@ -53,7 +53,8 @@ extension AppCoordinatorView
                 homeCoordinator: HomeCoordinator(
                     modularFactory: self.moduleFactory
                 ),
-                mainCoordinator: .init()
+                mainCoordinator: .init(),
+                transactionsCoordinator: TransactionsCoordinator(moduleFactory: self.moduleFactory)
             )
         }
     }

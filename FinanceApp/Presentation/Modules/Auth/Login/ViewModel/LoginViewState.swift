@@ -13,6 +13,7 @@ extension LoginViewModel
     {
         var email = TextFieldState(.email)
         var password = TextFieldState(.password)
+        var alertError: String = ""
         var loginState: LoginState
 
         var isContinueDisabled: Bool {
